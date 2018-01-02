@@ -1,17 +1,16 @@
-import React, {PropTypes} from 'react'
+import React from "react";
 
-const GroceryList = (props) => {
-  // Using Bootstrap 4 card layout  
-  return (
-    <div className="GroceryList container">
-      To Be Made
-    </div>
-  )
-}
+import PropTypes from "prop-types";
+
+const GroceryList = ({ items, itemFilters }) => {
+  // Using Bootstrap 4 card layout
+  console.log(items);
+  return <div className="GroceryList container">To Be Made</div>;
+};
 
 GroceryList.propTypes = {
   items: PropTypes.array.isRequired,
-  itemFilters: PropTypes.string.isRequired,
-}
+  itemFilters: PropTypes.string.isRequired
+};
 
-export default GroceryList
+export default GroceryList;
