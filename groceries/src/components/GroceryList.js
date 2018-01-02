@@ -1,5 +1,6 @@
-import React, {Component} from "react";
+import React, { Component } from "react";
 import PropTypes from "prop-types";
+import AddItemContainer from "../containers/AddItemContainer";
 
 //custom components
 import GroceryCard from "./GroceryCard";
@@ -19,7 +20,7 @@ class GroceryList extends Component {
 
   showForm(e) {
     e.preventDefault;
-    this.setState({showingForm: true});
+    this.setState({ showingForm: true });
   }
 
   render() {
@@ -33,7 +34,7 @@ class GroceryList extends Component {
         </button>
         {this.state.showingForm ? (
           <div>
-            <form />
+            <AddItemContainer showForm={showForm} />
           </div>
         ) : (
           <div />
