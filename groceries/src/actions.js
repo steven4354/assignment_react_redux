@@ -7,7 +7,7 @@ export const SHOW_NOT_AVAILABLE = "SHOW_NOT_AVAILABLE";
 export const SORT_BY_NAME = "SORT_BY_NAME";
 export const SORT_BY_DESCRIPTION = "SORT_BY_DESCRIPTION";
 
-let nextItemId = 1;
+let nextItemId = 2;
 export function createItem(data) {
   return {
     type: CREATE_ITEM,
@@ -53,20 +53,6 @@ export function showAvailable(data) {
 export function showNotAvailable(data) {
   return {
     type: SHOW_NOT_AVAILABLE,
-    data
-  };
-}
-
-export function sortByName(data) {
-  return {
-    type: SORT_BY_NAME,
-    data
-  };
-}
-
-export function sortByDescription(data) {
-  return {
-    type: SORT_BY_DESCRIPTION,
     data
   };
 }
