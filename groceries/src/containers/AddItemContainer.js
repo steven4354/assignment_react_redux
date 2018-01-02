@@ -1,14 +1,14 @@
-import React, {Component} from "react";
+import React, { Component } from "react";
 
 // Import serialize to get the serialized form data
 import serialize from "form-serialize";
 
 //*redux store connection stuff
 // Import the connect function from React-Redux
-import {connect} from "react-redux";
+import { connect } from "react-redux";
 
 //Import the createPuppy action creator
-import {createItem} from "../actions";
+import { createItem } from "../actions";
 // Import the presentational component
 import AddItem from "../components/AddItem";
 
@@ -31,7 +31,7 @@ const mapDispatchToProps = dispatch => {
       e.preventDefault();
 
       const form = e.target;
-      const data = serialize(form, {hash: true});
+      const data = serialize(form, { hash: true });
 
       dispatch(createItem(data));
       form.reset();

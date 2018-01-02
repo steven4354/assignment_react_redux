@@ -1,6 +1,13 @@
 //*redux store connection stuff
 import { connect } from "react-redux";
-import { createItem, purchaseItem, updateItem } from "../actions";
+import {
+  createItem,
+  purchaseItem,
+  updateItem,
+  showAll,
+  showAvailable,
+  showNotAvailable
+} from "../actions";
 import { bindActionCreators } from "redux";
 import GroceryList from "../components/GroceryList";
 
@@ -21,7 +28,14 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
   // Create an object with the action creators
   // (or, import them as a named object)
-  const actions = { createItem, purchaseItem, updateItem };
+  const actions = {
+    createItem,
+    purchaseItem,
+    updateItem,
+    showAll,
+    showAvailable,
+    showNotAvailable
+  };
 
   // Returns exactly the same code as above
   return bindActionCreators(actions, dispatch);

@@ -7,12 +7,13 @@ export const SHOW_NOT_AVAILABLE = "SHOW_NOT_AVAILABLE";
 export const SORT_BY_NAME = "SORT_BY_NAME";
 export const SORT_BY_DESCRIPTION = "SORT_BY_DESCRIPTION";
 
-let nextItemId = 2;
+let nextItemId = 3;
 export function createItem(data) {
   return {
     type: CREATE_ITEM,
     data: {
       ...data,
+      available: true,
       id: nextItemId++
     }
   };

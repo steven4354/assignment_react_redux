@@ -13,6 +13,8 @@ import "./index.css";
 import { Provider } from "react-redux";
 import { createStore } from "redux";
 
+import { showAvailable, showNotAvailable, showAll } from "./actions";
+
 // Import our reducer to use when we create the store
 import { itemsApp } from "./reducers.js";
 
@@ -24,6 +26,13 @@ const itemsFromServer = [
     category: "fruits",
     description: "orange fruit",
     available: true
+  },
+  {
+    id: 2,
+    name: "apples",
+    category: "fruits",
+    description: "red fruit",
+    available: false
   }
 ];
 
@@ -39,5 +48,17 @@ ReactDOM.render(
   </Provider>,
   document.getElementById("root")
 );
+
+store.dispatch(showAvailable(store.getState().items));
+
+console.log("Show Available", store.getState());
+
+store.dispatch(showNotAvailable(store.getState().items));
+
+console.log("ShowNotAvailable", store.getState());
+
+store.dispatch(showAll(store.getState().items));
+
+console.log("Show All", store.getState());
 
 registerServiceWorker();

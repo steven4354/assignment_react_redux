@@ -3,14 +3,8 @@ import Input from "./elements/Input";
 import InputGroup from "./elements/InputGroup";
 import Button from "./elements/Button";
 import PropTypes from "prop-types";
-const AddItem = ({onSubmit, showForm}) => (
-  <form
-    className="container"
-    onSubmit={() => {
-      showForm();
-      onSubmit();
-    }}
-  >
+const AddItem = ({ onSubmit, showForm }) => (
+  <form className="container" onSubmit={onSubmit}>
     <h1>
       Add An Item{" "}
       <span className="glyphicon glyphicon-search" aria-hidden="true" />

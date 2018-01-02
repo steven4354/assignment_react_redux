@@ -19,7 +19,7 @@ const GroceryCard = ({ item }) => {
         <h4>{name}</h4>
         <p> id: {id} </p>
         <p> category: {category}</p>
-        <p> purchased: {!available}</p>
+        <p> purchased: {available.toString()}</p>
         <p> description: {description}</p>
       </div>
     </div>

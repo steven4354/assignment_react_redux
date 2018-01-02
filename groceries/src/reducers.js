@@ -6,7 +6,7 @@ import {
   UPDATE_ITEM,
   SHOW_ALL,
   SHOW_AVAILABLE,
-  SHOW_NOT_AVAILABLE,
+  SHOW_NOT_AVAILABLE
 } from "./actions";
 
 function items(state = [], action) {
@@ -36,7 +36,6 @@ function items(state = [], action) {
 }
 
 function itemFilters(state = "", action) {
-
   switch (action.type) {
     case SHOW_ALL:
       return action.data;
@@ -48,6 +47,10 @@ function itemFilters(state = "", action) {
       return action.data.filter(item => {
         return !item.available;
       });
+    // case SHOW_CATEGORY:
+    //   return action.data.filter(item => {
+    //     if
+    //   });
     default:
       return state;
   }
