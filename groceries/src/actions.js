@@ -33,6 +33,19 @@ export function updateItem(data) {
   };
 }
 
+export function sortByName() {
+  //data will be empty
+  return {
+    type: SORT_BY_NAME
+  };
+}
+
+export function sortByDescription() {
+  return {
+    type: SORT_BY_DESCRIPTION
+  };
+}
+
 //======================
 //FILTER
 //=====================
@@ -57,3 +70,7 @@ export function showNotAvailable(data) {
     data
   };
 }
+
+//======================
+//SORTING
+//=====================

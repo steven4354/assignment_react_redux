@@ -10,13 +10,17 @@ import "./index.css";
 //react-redux store items
 //-----------------------
 
-import { Provider } from "react-redux";
-import { createStore } from "redux";
+import {Provider} from "react-redux";
+import {createStore} from "redux";
 
-import { showAvailable, showNotAvailable, showAll } from "./actions";
+import {showAvailable, showNotAvailable, showAll} from "./actions";
+
+//for logging the store
+import {applyMiddleware} from "redux";
+import logger from "redux-logger";
 
 // Import our reducer to use when we create the store
-import { itemsApp } from "./reducers.js";
+import {itemsApp} from "./reducers.js";
 
 // Mocked server/API response aka initial states for some of the reducers
 const itemsFromServer = [
@@ -37,10 +41,14 @@ const itemsFromServer = [
 ];
 
 //creating the store
-let store = createStore(itemsApp, {
-  // puppies: puppiesFromServer,
-  items: itemsFromServer
-});
+let store = createStore(
+  itemsApp,
+  {
+    // puppies: puppiesFromServer,
+    items: itemsFromServer
+  },
+  applyMiddleware(logger)
+);
 
 ReactDOM.render(
   <Provider store={store}>

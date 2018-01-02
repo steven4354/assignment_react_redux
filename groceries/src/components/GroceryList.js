@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, {Component} from "react";
 import PropTypes from "prop-types";
 import AddItemContainer from "../containers/AddItemContainer";
 
@@ -21,7 +21,7 @@ class GroceryList extends Component {
 
   showForm(e) {
     e.preventDefault();
-    this.setState({ showingForm: true });
+    this.setState({showingForm: true});
   }
 
   filterItems(e) {
@@ -50,12 +50,28 @@ class GroceryList extends Component {
           className="form-control"
           name="filter"
           onChange={this.filterItems}
+          style={{
+            marginBottom: "10px"
+          }}
         >
           <option value="Show all">Show All</option>
           <option value="Show available">Show Available</option>
           <option value="Show not available">Show Not Available</option>
         </select>
-        {this.props.items.map(obj => {
+
+        <select
+          className="form-control"
+          name="filter"
+          onChange={this.filterItems}
+          style={{
+            marginBottom: "10px"
+          }}
+        >
+          <option value="Sort By Name">Sort By Name</option>
+          <option value="Sort By Description">Sort By Description</option>
+        </select>
+
+        {this.props.itemFilters.map(obj => {
           return <GroceryCard item={obj} key={obj.id} />;
         })}
         <button className={`btn btn-danger btn-lg`} onClick={this.showForm}>
