@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, {Component} from "react";
 import PropTypes from "prop-types";
 import AddItemContainer from "../containers/AddItemContainer";
 
@@ -19,8 +19,8 @@ class GroceryList extends Component {
   }
 
   showForm(e) {
-    e.preventDefault;
-    this.setState({ showingForm: true });
+    e.preventDefault();
+    this.setState({showingForm: true});
   }
 
   render() {
@@ -34,7 +34,7 @@ class GroceryList extends Component {
         </button>
         {this.state.showingForm ? (
           <div>
-            <AddItemContainer showForm={showForm} />
+            <AddItemContainer showForm={this.showForm} />
           </div>
         ) : (
           <div />
