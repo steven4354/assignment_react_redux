@@ -32,9 +32,25 @@ function items(state = state || [], action) {
         return item;
       });
     case SORT_BY_NAME:
-      return state.splice(0).sort((a, b) => {});
+      return state.splice(0).sort((a, b) => {
+        if (a.name > b.name) {
+          return 1;
+        } else if (b.name > a.name) {
+          return -1;
+        } else {
+          return 0;
+        }
+      });
     case SORT_BY_DESCRIPTION:
-      return state.splice(0).sort((a, b) => {});
+      return state.splice(0).sort((a, b) => {
+        if (a.name > b.name) {
+          return 1;
+        } else if (b.name > a.name) {
+          return -1;
+        } else {
+          return 0;
+        }
+      });
     default:
       return state;
   }
